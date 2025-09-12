@@ -36,7 +36,7 @@
     .imagen-container img {
       max-width: 100%;
       height: auto;
-      display: none;
+      display: none; /* Se oculta por defecto y JS la muestra si existe */
     }
     .pie {
       font-size: 10px; /* Más pequeño para que quepa */
@@ -53,17 +53,16 @@
 <body onload="cargarDatos(); window.print();">
 
   <div class="recibo">
-    <div class="titulo" style="font-size:40px;">JS</div>
+    <div class="titulo" style="font-size:40px;">DON SOMB</div>
     <div class="titulo">PARQUEADERO</div>
-    <div class="titulo">DIR: CARRERA 7 # 15-46</div>
-    <div class="titulo">TELEFONO: 3163296157</div>
+    <div class="titulo">DIR: CALLE 12 # 3 33</div>
+    <div class="titulo">TELEFONO: 302 2038020</div>
 
     <div class="item"><span class="label">Recibo:</span> <span id="norecibo"></span></div>
-    <div class="item"><span class="label">Placa:</span> <span id="placa"></span></div>   
+    <div class="item"><span class="label">Placa:</span> <span id="placa"></span></div>    
     <div class="item"><span class="label">Ingreso:</span> <span id="ingreso"></span></div> 
     <div class="item"><span class="label">Precio:</span> <span id="preciohora"></span></div>
     
-
     <div class="imagen-container">
       <img id="imagenRecibo" src="" alt="Imagen del recibo">
     </div>
@@ -71,11 +70,7 @@
     <div class="linea"></div>
 
     <div class="pie">
-      <strong>REGLAMENTO</strong> OJO SI PASA DE LAS 7 P.M. SE COBRARA UNA JORNAD MAS
-      El vehículo se entregará al portador del recibo. No aceptamos órdenes telefónicas ni escritas. 
-      Retirado el vehículo, no aceptamos ningún tipo de reclamo. No nos responsabilizamos por la pérdida, deterioro o daños ocurridos como 
-      consecuencia de incendio, terremoto, asonada, revolución, u otras causas similares. No respondemos 
-      por daños al vehículo causados por terceros. Debe dejar la moto sin seguro.
+      <strong>REGLAMENTO</strong> OJO SI PASA DE LAS 7 P.M.  SE QUEDA EL VEHICULO HASTA EL DIA SIGUIENTE Y SE COBRARA JORNADA NOCTURNA, DEJAR VEHICULO SIN SEGURO.
     </div>
   </div>
 
@@ -84,11 +79,10 @@
       const params = new URLSearchParams(window.location.search);
 
       document.getElementById("norecibo").textContent = params.get("norecibo") || "";
-      document.getElementById("placa").textContent = params.get("placa") || "";     
+      document.getElementById("placa").textContent = params.get("placa") || "";      
       document.getElementById("ingreso").textContent = params.get("ingreso") || "";      
       document.getElementById("preciohora").textContent = params.get("preciohora") || "";
-     
-
+      
       const imagenRuta = params.get("imagen") || "";
       const imagenElement = document.getElementById("imagenRecibo");
 
@@ -103,13 +97,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
