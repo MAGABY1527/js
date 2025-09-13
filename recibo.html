@@ -76,6 +76,7 @@
 
   <script>
     function cargarDatos() {
+      // Este script toma los parámetros de la URL que le envía AppSheet.
       const params = new URLSearchParams(window.location.search);
 
       document.getElementById("norecibo").textContent = params.get("norecibo") || "";
@@ -83,9 +84,12 @@
       document.getElementById("ingreso").textContent = params.get("ingreso") || "";      
       document.getElementById("preciohora").textContent = params.get("preciohora") || "";
       
+      // La clave está aquí: 'imagenRuta' debe ser una URL completa y válida.
+      // AppSheet debe generar esta URL usando la fórmula GETIMAGEURL() en la acción.
       const imagenRuta = params.get("imagen") || "";
       const imagenElement = document.getElementById("imagenRecibo");
 
+      // Si AppSheet envía una ruta de imagen válida, este código la mostrará.
       if (imagenRuta) {
         imagenElement.src = imagenRuta;
         imagenElement.style.display = 'block';
@@ -97,3 +101,4 @@
 
 </body>
 </html>
+
