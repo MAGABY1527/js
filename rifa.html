@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Rifa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            width: 58mm;
+        }
+        .ticket-container {
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .item p {
+            margin: 3px 0;
+            text-align: left;
+        }
+        .cobrar-info {
+            text-align: center;
+            margin-top: 10px;
+            border-top: 1px dashed #000;
+            border-bottom: 1px dashed #000;
+            padding: 10px 0;
+        }
+        h1 {
+            font-size: 16px;
+            margin: 0;
+            font-weight: bold;
+        }
+        hr {
+            border: none;
+            border-top: 1px dashed #000;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body onload="imprimirTicket()">
+    <div class="ticket-container">
+        <div class="header">
+            COMPROBANTE DE RIFA
+        </div>
+        <hr>
+        <div class="item">
+            
+        </div>
+        
+        <div class="cobrar-info">
+            <p>COBRAR:</p>
+            <h1>[COBRAR]</h1>
+        </div>
+    </div>
+
+    <script>
+        function imprimirTicket() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+
